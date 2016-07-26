@@ -3,4 +3,33 @@ os: linux
 files:
   - source: /
     destination: /usr/share/nginx/html
+hooks:
+  ApplicationStop:
+    - location: hooks-processor
+      timeout: 3
+      runas: root
+  DownloadBundle:
+    - location: hooks-processor
+      timeout: 3
+      runas: root
+  BeforeInstall:
+    - location: hooks-processor
+      timeout: 3
+      runas: root
+  Install:
+    - location: hooks-processor
+      timeout: 3
+      runas: root
+  AfterInstall:
+    - location: hooks-processor
+      timeout: 3
+      runas: root
+  ApplicationStart:
+    - location: hooks-processor
+      timeout: 3
+      runas: root
+  ValidateService:
+    - location: hooks-processor
+      timeout: 3
+      runas: root
 

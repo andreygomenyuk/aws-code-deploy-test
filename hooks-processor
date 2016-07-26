@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+$msg = sprintf("[%s] %s\n", strftime("%F %T"), print_r($argv, true));
+error_log($msg, 3, "/tmp/install.log");
+
